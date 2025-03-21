@@ -1,12 +1,55 @@
-# React + Vite
+# My Shop - Интернет-магазин (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой простой интернет-магазин, разработанный на React. Он использует Redux для управления состоянием и Material UI для создания пользовательского интерфейса.
 
-Currently, two official plugins are available:
+## Запуск проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Для запуска проекта необходимо выполнить следующие шаги:
 
-## Expanding the ESLint configuration
+1.  **Клонируйте репозиторий:**
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    ```bash
+    git clone <ваш_URL_репозитория>
+    cd <название_папки_проекта>
+    ```
+
+2.  **Установите зависимости:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Запустите JSON Server (имитация API):**
+
+    ```bash
+    json-server --watch public/data.json --port 3001
+    ```
+    Убедитесь, что вы находитесь в корневой директории проекта при выполнении этой команды.  Этот сервер будет предоставлять данные о товарах.
+
+4.  **Запустите React-приложение:**
+
+    ```bash
+    npm run dev
+    ```
+
+    В терминале вы увидите ссылку на локальный сайт (например, `Local: http://localhost:5174/`).  Откройте эту ссылку в браузере, чтобы увидеть работающее приложение.
+
+## Дополнительная информация
+
+*   **JSON Server:** Используется для имитации REST API и предоставления данных о товарах.  Файл `public/data.json` содержит данные о товарах в формате JSON.  Порт 3001 используется для того, чтобы React-приложение и JSON Server работали на разных портах и не мешали друг другу.
+
+*   **React:**  Основной фреймворк, используемый для создания пользовательского интерфейса.
+
+*   **Redux:** Используется для управления состоянием приложения, таким как корзина покупок и информация о пользователе.
+
+*   **Material UI:**  Библиотека React-компонентов, реализующая Material Design, для создания красивого и удобного пользовательского интерфейса.
+
+*   **Vite:**  Используется как бандлер (инструмент для сборки проекта), который предоставляет очень быструю разработку и сборку.
+
+## Возможные проблемы и решения
+
+В случае возникновения ошибок, связанных с отсутствующими зависимостями, попробуйте установить следующие пакеты:
+
+```bash
+npm install redux-persist
+npm install @mui/icons-material
